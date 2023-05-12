@@ -10,11 +10,98 @@
 
 
 
-<body>
+<body style="background-color: #2f4f4f; padding-top: 10px;     font-family: sans-serif;">
+
+<form type="post" style="border: solid 1px #919191; background-color:#2e6e6e; padding: 10px;">
+
+    <p style="background-color: #5f9ea0; width: max-content;top: -35px; position: relative;">Personal Data</p>
 
 
+    <!--First Box-->
+    <div style="background-color: #5f9ea0; border: solid 1px #919191; margin-top:50px; padding: 10px; max-height: 130px; top: -16px; position: relative;">
+        <div style="top: -76px; position: relative;">
+    <p style="background-color: #3e858b; width: max-content; min-height: 100px; display: flex;align-items: center;    margin-bottom: 45px;">Your Name</p>
+    <!--first name-->
+    <label id="first-name" for="firstname" style="width: 113px;display: inline-flex;  justify-content: space-between;">First Name<em style="font-style: normal;">:</em></label>
+    <input id="firstname" type="text" name="fname" placeholder="ex.Mohamed" style="margin-bottom: 2px;">
+    <br>
+    <!--last name-->
+    <label id="last-name" for="lastname" style="width: 113px;display: inline-flex;  justify-content: space-between;">Second Name<em style="font-style: normal;">:</em></label>
+    <input id="lastname" type="text" name="lname" placeholder="ex.Hashem" style="margin-bottom: 2px;">
 
+    </div>
+    </div>
     
+
+    <br>
+
+    <div>
+
+    <!--phone-->
+    <label id="phonenum" for="phone" style="width: 100px;display: inline-flex;  justify-content: space-between;">Your Phone<em style="font-style: normal;">:</em></label>
+    <input id="phone" type="tel" name="tel" style="margin-bottom: 2px;"><br>
+    <!--email-->
+    <label id="emailadd" for="email" style="width: 100px;display: inline-flex;  justify-content: space-between;">Email<em style="font-style: normal;">:</em></label>
+    <input id="email" type="email" name="email" style="margin-bottom: 2px;"><br>
+    <!--Pass-->
+    <label id="password" for="txtPassword" style="width: 100px;display: inline-flex;  justify-content: space-between;">Passowrd <em style="font-style: normal;">:</em></label>
+    <input id="txtPassword" type="password" name="pswd1" required style="margin-bottom: 2px;"><br>
+    <!--rePass-->
+    <label id="repassword" for="txtConfirmPassword" style="width: 100px;display: inline-flex;  justify-content: space-between;">re-Passowrd<em style="font-style: normal;">:</em></label>
+    <input id="txtConfirmPassword" type="password" name="pswd2" required style="margin-bottom: 2px;">
+    
+    <br><br><br>
+
+
+    </div>
+
+
+    <div>
+        <!--Gender Choosing-->
+        <input id="male" type="radio" name="gender-ch" value="male">
+        <label id="gender" for="male">Male</label>
+        <br>
+        <input id="fem" type="radio" name="gender-ch" value="female">
+        <label id="female" for="fem">Female</label>
+
+        <br><br>
+
+        <!--status Choosing-->
+        <input id="Student" type="checkbox" name="status-ch" value="student">
+        <label id="status" for="Student">Student</label>
+        <br>
+        <input id="graduated" type="checkbox" name="status-ch" value="graduated">
+        <label id="graduated" for="graduated">graduated</label>
+        <br><br>
+
+
+        <label for="university" id="university-ch" form="university">University<em style="font-style: normal;">:</em></label>
+        <select id="university">
+            <option>AUC</option>
+            <option>BUC</option>
+            <option>CIC</option>
+        </select>
+    </div>
+
+
+    <br>
+<button type="submit" id="btnSubmit" value="Submit" onclick="return Validate()" style="background-color: #3c3c3c; border-radius:7px;color:#fff;border: 0; font-size:20px;">Submit</button>
+</form>
+
+
     
 </body>
 </html>
+
+
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>
